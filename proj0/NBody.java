@@ -50,6 +50,7 @@ public class NBody {
 
         while(t < T){
             
+            //Background picture
             StdDraw.picture(0, 0, "images/starfield.jpg");
 
             for(int i=0; i<planets.length; i++){
@@ -60,7 +61,7 @@ public class NBody {
             }
 
             StdDraw.show();
-            StdDraw.pause(100);	
+            StdDraw.pause(80);	
             t += dt;
         }
 
