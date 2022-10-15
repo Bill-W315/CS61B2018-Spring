@@ -45,6 +45,9 @@ public class ArrayDeque<T>{
         checkUsage();
         items[nextLast] = item;
         nextLast += 1;
+        if(nextLast == arraySize){
+            nextLast = 0;
+        }
     }
 
     //Returns true if deque is empty, false otherwise.

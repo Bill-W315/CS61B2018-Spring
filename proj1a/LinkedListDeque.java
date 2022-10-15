@@ -33,8 +33,8 @@ public class LinkedListDeque<T>{
             sentinal.next = newNode;
             sentinal.prev = newNode;
         }else{
-            newNode.prev = sentinal.next;
-            sentinal.next.next = newNode;
+            newNode.prev = sentinal.prev;
+            sentinal.prev.next = newNode;
             sentinal.prev = newNode;
         }
         size += 1;
@@ -99,7 +99,7 @@ public class LinkedListDeque<T>{
        size = 0;
     }
     public T getRecursive(int index){
-        if(index+1 > size){
+        if(index+1 > size || index < 0){
             return null;
         }
         return recursiveHelper(index,sentinal.next);
