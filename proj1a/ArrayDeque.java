@@ -75,11 +75,10 @@ public class ArrayDeque<T>{
         size -= 1;
         checkUsage();
         nextFirst += 1;
-        T item = items[nextFirst];
-        if(nextFirst == arraySize){
+        if(nextFirst >= arraySize){
             nextFirst = 0;
         }
-        return items[nextLast];
+        return items[nextFirst];
     }
 
     // Removes and returns the item at the back of the deque. If no such item exists, returns null.
@@ -90,11 +89,10 @@ public class ArrayDeque<T>{
         size -= 1;
         checkUsage();
         nextLast -= 1;
-        T item = items[nextLast];
         if(nextLast < 0){
             nextLast = arraySize - 1;
         }
-        return item;
+        return items[nextLast];
     }
 
     //Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth. If no such item exists, returns null. Must not alter the deque!
