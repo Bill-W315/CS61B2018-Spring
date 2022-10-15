@@ -78,6 +78,7 @@ public class ArrayDeque<T>{
         if(nextFirst >= arraySize){
             nextFirst = 0;
         }
+        checkUsage();
         return items[nextFirst];
     }
 
@@ -92,6 +93,7 @@ public class ArrayDeque<T>{
         if(nextLast < 0){
             nextLast = arraySize - 1;
         }
+        checkUsage();
         return items[nextLast];
     }
 
@@ -102,8 +104,11 @@ public class ArrayDeque<T>{
             return null;
         }else{
             target = nextFirst + index - 1;
-            if(target >= arraySize - 1){
+            if(target > arraySize - 1){
                 target = target - arraySize;
+            }
+            if(target < 0){
+                target = arraySize - target;
             }
         }
         return items[target];
