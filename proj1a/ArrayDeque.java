@@ -1,14 +1,17 @@
 public class ArrayDeque<T>{
 
-    T[] items = (T[]) new Object[8];
-    int nextFirst = 3;
-    int nextLast = 4;
-    int size = 0;
-    int arraySize = items.length;
-    double usageFactor = 0.25;
+    private T[] items = (T[]) new Object[8];
+    private int nextFirst = 3;
+    private int nextLast = 4;
+    private int size = 0;
+    private int arraySize = items.length;
+    private double usageFactor = 0.25;
 
     private void resize(float refactor){
         int targetSize = Math.round(arraySize * refactor) + 1;
+        if(targetSize <= 8){
+            targetSize = 8;
+        }
         arraySize = targetSize;
         T[] newArray = (T[]) new Object[targetSize];
         for (int i=0; i < targetSize; i++){
