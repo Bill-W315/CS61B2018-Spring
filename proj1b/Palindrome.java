@@ -12,10 +12,25 @@ public class Palindrome {
             return true;
         }
         Deque wordInDeque = wordToDeque(word);
-        while(wordInDeque.isEmpty() != true){
+        while(wordInDeque.isEmpty() != true && wordInDeque.size() != 1){
             Character left = (Character) wordInDeque.removeFirst();
             Character right = (Character) wordInDeque.removeLast();
             if(left.equals(right) == false){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isPalindrome(String word, CharacterComparator cc){
+        if(word.length() == 0 || word.length() == 1){
+            return true;
+        }
+        Deque wordInDeque = wordToDeque(word);
+        while(wordInDeque.isEmpty() != true && wordInDeque.size() != 1){
+            Character left = (Character) wordInDeque.removeFirst();
+            Character right = (Character) wordInDeque.removeLast();
+            if(cc.equalChars(left,right) == false){
                 return false;
             }
         }

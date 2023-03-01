@@ -20,5 +20,11 @@ public class TestPalindrome {
     public void  testIsPalindrome(){
         assertEquals(true, palindrome.isPalindrome("oooo"));
         assertEquals(false, palindrome.isPalindrome("ABa"));
+        assertEquals(true, palindrome.isPalindrome("ABA"));
+
+        CharacterComparator cc = new OffByOne();
+        assertEquals(true, palindrome.isPalindrome("flake",cc));
+        assertEquals(false, palindrome.isPalindrome("abA",cc));
+
     }
 }
