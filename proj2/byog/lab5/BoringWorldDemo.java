@@ -18,11 +18,11 @@ public class BoringWorldDemo {
 
         // initialize tiles
         TETile[][] world = new TETile[WIDTH][HEIGHT];
-        for (int x = 0; x < WIDTH; x += 1) {
-            for (int y = 0; y < HEIGHT; y += 1) {
-                world[x][y] = Tileset.NOTHING;
-            }
-        }
+//        for (int x = 0; x < WIDTH; x += 1) {
+//            for (int y = 0; y < HEIGHT; y += 1) {
+//                world[x][y] = Tileset.NOTHING;
+//            }
+//        }
 
         // fills in a block 14 tiles wide by 4 tiles tall
         for (int x = 20; x < 35; x += 1) {
